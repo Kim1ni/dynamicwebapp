@@ -1,6 +1,6 @@
 <?php
 require_once 'config.php';
-/*You can use this to run it locally
+//You can use this to run it locally
 // Create a database connection
 function connectDB() {
     $connection = new mysqli(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
@@ -12,7 +12,8 @@ function connectDB() {
     
     return $connection;
 }
-*/
+
+/*
 function connectDB() {
     $host = getenv('RENDER_DB_HOST');
     $database = getenv('RENDER_DB_NAME');
@@ -30,7 +31,7 @@ function connectDB() {
         die("Connection failed: " . $e->getMessage());
     }
 }
-
+*/
 // Execute a prepared statement with parameters
 function executeQuery($sql, $types = null, $params = []) {
     $connection = connectDB();

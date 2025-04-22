@@ -50,4 +50,4 @@ A secure web application that allows users to register, log in, and submit forms
 - `logout.php` - User logout
 - `includes/` - PHP function files and configuration
 - `css/` - Stylesheets
-- `js/` - JavaScript files
+- `js/` - JavaScript files# dynamicwebapp
