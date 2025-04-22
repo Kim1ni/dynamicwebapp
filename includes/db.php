@@ -1,6 +1,6 @@
 <?php
 require_once 'config.php';
-
+/*You can use this to run it locally
 // Create a database connection
 function connectDB() {
     $connection = new mysqli(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
@@ -11,6 +11,24 @@ function connectDB() {
     }
     
     return $connection;
+}
+*/
+function connectDB() {
+    $host = getenv('RENDER_DB_HOST');
+    $database = getenv('RENDER_DB_NAME');
+    $username = getenv('RENDER_DB_USER');
+    $password = getenv('RENDER_DB_PASSWORD');
+    $port = getenv('RENDER_DB_PORT') ?: '5432';
+    
+    $connection_string = "pgsql:host={$host};port={$port};dbname={$database};user={$username};password={$password}";
+    
+    try {
+        $connection = new PDO($connection_string);
+        $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        return $connection;
+    } catch (PDOException $e) {
+        die("Connection failed: " . $e->getMessage());
+    }
 }
 
 // Execute a prepared statement with parameters
