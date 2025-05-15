@@ -1,6 +1,6 @@
 # Dynamic Web Application
 
-A secure web application that allows users to register, log in, and submit forms that store data in a MySQL database.
+A secure web application that allows users to register, log in, and submit forms that store data in a MySQL database. It's been deployed on render with the help of GitHub Actions and Docker(the Main.yml file in the .github/workflows path) 
 
 ## Features
 
